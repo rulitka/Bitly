@@ -1,5 +1,5 @@
 # Bitly
-h2 Bitly url shorterer converter
+## Bitly url shorterer converter
 [TODO: here would be project description]
 
 How to install
