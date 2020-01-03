@@ -4,9 +4,23 @@
 
 ## Как инсталлировать:
 [!IMPORTANT
-  Для начала нужно установить Python 3 с официального сайта [Python](https://www.python.org/downloads/).]
+Для начала нужно установить Python 3 с официального сайта [Python](https://www.python.org/downloads/).]
 
 
 ## Цели проекта
 [!TIP
-Этот проект был написан в образовательных целях для веб-разработкина сайте  [Devman](https://www.dvmn.org).]
+Этот проект был написан в образовательных целях для веб-разработкина сайте [Devman](https://www.dvmn.org).]
+> [!NOTE]
+> Information the user should notice even if skimming.
+
+> [!TIP]
+> Optional information to help a user be more successful.
+
+> [!IMPORTANT]
+> Essential information required for user success.
+
+> [!CAUTION]
+> Negative potential consequences of an action.
+
+> [!WARNING]
+> Dangerous certain consequences of an action.
