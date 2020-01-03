@@ -10,11 +10,11 @@ API_URL = 'https://api-ssl.bitly.com/v4/bitlinks'
 BITLY_TOKEN = os.getenv("TOKEN")
 HEADERS = {'Authorization': BITLY_TOKEN}
 
-def createParser():
+def create_parser():
   parser = argparse.ArgumentParser(description='Ссылка для сокращения')
   parser.add_argument('link', type=str, help='Input link for conversion')
- 
-  return parser
+  args = parser.parse_args()
+  return args.link
 
 def shorten_link(user_input): 
   response_bitlinks = requests.post(API_URL, json={'long_url': user_input}, headers = HEADERS)
@@ -29,8 +29,7 @@ def count_clicks(short_link):
   return sum_of_clicks.json()['total_clicks']
 
 def main():
-  parser = createParser()
-  user_input = parser.parse_args()
+  user_input = create_parser()
   if user_input.startswith("bit.ly/"):
     short_link = user_input 
     print ("По вашей ссылке прошли: ",count_clicks(short_link), "раз")          
@@ -48,10 +47,3 @@ if __name__== "__main__":
     print("Выход")
   except Exception as exc:
     print ("Вы ввели неверную ссылку") 
-
-
-
-
-
-
-
