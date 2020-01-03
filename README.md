@@ -1,12 +1,10 @@
 # Bitly
 ## Bitly url shorterer converter
-[TODO: here would be project description]
+[TODO: Это приложение позволяет сокращать ссылки, а также получать количество кликов по уже сокращенным ссылкам. Если пользователь вводит ссылку, которую хочет сократить, программа выдает ему сокращенную ссылку с помощью сервиса [link text](https://app.bitly.com/bbt2/)/ В случае, если пользователь уже вводит сокращенную ссылку, ему предоставляется информация о том, скольок переходов было совершено по этой ссылке.]
 
-How to install
-[TODO: tell user where he should get keys, where they should be and how they look like]
+## Как инсталлировать:
+[TODO: Для начала нужно установить Python 3 с официального сайта [link text](https://www.python.org/downloads/) ]
+Затем используя pip (или pip3, если он конфликтует с Python2) нужно дополнительно установить модули: 
 
-Python3 should be already installed. Then use pip (or pip3, if there is a conflict with Python2) to install dependencies:
-
-pip install -r requirements.txt
-Project Goals
-The code is written for educational purposes on online-course for web-developers dvmn.org.
+## Цели проекта
+Этот проект был написан в образовательных целях для веб-разработкина сайте  [link text](https://www.dvmn.org).
