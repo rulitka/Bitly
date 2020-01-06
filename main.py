@@ -16,8 +16,8 @@ def create_argument():
   args = parser.parse_args()
   return args.link
 
-def shorten_link(user_input): 
-  response_bitlinks = requests.post(API_URL, json={'long_url': user_input}, headers = HEADERS)
+def shorten_link(user_link_input): 
+  response_bitlinks = requests.post(API_URL, json={'long_url': user_link_input}, headers = HEADERS)
   bitlink = response_bitlinks.json()['id']
   return bitlink
   
