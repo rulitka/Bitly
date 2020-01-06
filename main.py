@@ -10,7 +10,7 @@ API_URL = 'https://api-ssl.bitly.com/v4/bitlinks'
 API_TOKEN = os.getenv("BITLY_TOKEN")
 HEADERS = {'Authorization': API_TOKEN}
 
-def create_parser():
+def create_argument():
   parser = argparse.ArgumentParser(description='Ссылка для сокращения')
   parser.add_argument('link', type=str, help='Input link for conversion')
   args = parser.parse_args()
@@ -29,13 +29,13 @@ def count_clicks(short_link):
   return sum_of_clicks.json()['total_clicks']
 
 def main():
-  user_input = create_parser()
-  if user_input.startswith("bit.ly/"):
-    short_link = user_input 
+  user_link_input = create_argument()
+  if user_link_input.startswith("bit.ly/"):
+    short_link = user_link_input 
     print ("По вашей ссылке прошли: ",count_clicks(short_link), "раз")          
-  elif user_input.startswith("http://") or ("https://"):
-    long_url = user_input
-    print ("Ваша короткая ссылка: ", shorten_link(user_input)) 
+  elif user_link_input.startswith("http://") or ("https://"):
+    long_url = user_link_input
+    print ("Ваша короткая ссылка: ", shorten_link(user_link_input)) 
   else:
     print ("Попробуйте еще раз, нерабочая ссылка") 
  
