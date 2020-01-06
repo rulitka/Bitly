@@ -7,8 +7,8 @@ import os
 
 URL = 'https://api-ssl.bitly.com/v4/user'
 API_URL = 'https://api-ssl.bitly.com/v4/bitlinks'
-BITLY_TOKEN = os.getenv("TOKEN")
-HEADERS = {'Authorization': BITLY_TOKEN}
+API_TOKEN = os.getenv("BITLY_TOKEN")
+HEADERS = {'Authorization': API_TOKEN}
 
 def create_parser():
   parser = argparse.ArgumentParser(description='Ссылка для сокращения')
