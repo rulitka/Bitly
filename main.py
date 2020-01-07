@@ -3,7 +3,7 @@ import argparse
 import json
 import os
 from dotenv import load_dotenv, find_dotenv
-load_dotenv()
+
 
 URL = 'https://api-ssl.bitly.com/v4/user'
 API_URL = 'https://api-ssl.bitly.com/v4/bitlinks'
@@ -37,6 +37,7 @@ def count_clicks(short_link):
 
 
 def main():
+    load_dotenv(find_dotenv())
     user_link_input = create_argument()
     if user_link_input.startswith("bit.ly/"):
         short_link = user_link_input
