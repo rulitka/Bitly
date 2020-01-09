@@ -43,7 +43,7 @@ if __name__ == "__main__":
             print("По вашей ссылке прошли: ", count_clicks(short_link, api_token, headers), "раз")
         except requests.exceptions.HTTPError:
             print("Выход")
-    elif user_link_input.startswith("http://") or ("https://"):
+    elif user_link.startswith("http://") or ("https://"):
         long_url = user_link
         try:
             print("Ваша короткая ссылка: ", shorten_link(user_link, api_token, headers))
