@@ -17,7 +17,7 @@ def create_argument():
 
 def shorten_link(user_link, api_token, headers):
      response_bitlinks = requests.post(API_URL,
-                                       json={'long_url': user_link_input},                                            
+                                       json={'long_url': user_link},                                            
                                        headers=headers)
     bitlink = response_bitlinks.json()['id']
     return bitlink 
@@ -39,16 +39,17 @@ if __name__ == "__main__":
     user_link = create_argument()
     if user_link.startswith("bit.ly/"):
         short_link = user_link
-        print("По вашей ссылке прошли: ", count_clicks(short_link, api_token, headers), "раз")
+        try:
+            print("По вашей ссылке прошли: ", count_clicks(short_link, api_token, headers), "раз")
+        except requests.exceptions.HTTPError:
+            print("Выход")
     elif user_link_input.startswith("http://") or ("https://"):
         long_url = user_link
-        print("Ваша короткая ссылка: ", shorten_link(user_link, api_token, headers))
+        try:
+            print("Ваша короткая ссылка: ", shorten_link(user_link, api_token, headers))
+        except requests.exceptions.HTTPError:
+            print("Выход")
     else:
         print("Попробуйте еще раз, нерабочая ссылка")
-    try:
-        user_link = create_argument()
-    except requests.exceptions.HTTPError:
-        print("Выход")
-    except Exception as exc:
-        print("Вы ввели неверную ссылку")
+
         
