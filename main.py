@@ -15,7 +15,7 @@ def create_argument():
     return args.link
 
 
-def shorten_link(user_link_input, api_token, headers):
+def shorten_link(user_link, api_token, headers):
      response_bitlinks = requests.post(API_URL,
                                        json={'long_url': user_link_input},                                            
                                        headers=headers)
@@ -36,17 +36,17 @@ if __name__ == "__main__":
     load_dotenv(find_dotenv())
     api_token = os.getenv("BITLY_TOKEN")
     headers = {'Authorization': api_token}
-    user_link_input = create_argument()
-    if user_link_input.startswith("bit.ly/"):
-        short_link = user_link_input
+    user_link = create_argument()
+    if user_link.startswith("bit.ly/"):
+        short_link = user_link
         print("По вашей ссылке прошли: ", count_clicks(short_link, api_token, headers), "раз")
     elif user_link_input.startswith("http://") or ("https://"):
-        long_url = user_link_input
-        print("Ваша короткая ссылка: ", shorten_link(user_link_input, api_token, headers))
+        long_url = user_link
+        print("Ваша короткая ссылка: ", shorten_link(user_link, api_token, headers))
     else:
         print("Попробуйте еще раз, нерабочая ссылка")
     try:
-        user_link_input = create_argument()
+        user_link = create_argument()
     except requests.exceptions.HTTPError:
         print("Выход")
     except Exception as exc:
