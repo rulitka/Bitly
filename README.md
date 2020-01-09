@@ -8,6 +8,12 @@
 Для начала нужно установить Python 3 с официального сайта [Python](https://www.python.org/downloads/).
 
 ## Пример работы программы
+Создает из длинной ссылки короткой:
+```
+C:/Python/Bitly/main.py https://fulltienich.com/noutbuk-ne-vyihodit-iz-spyashhego-rezhima-windows-7/
+Ваша короткая ссылка: bit.ly/3049dvX.
+```
+Показывает, сколько было кликов по короткой ссылке:
 ```
 C:/Python/Bitly/main.py bit.ly/2F7g0v5
 По вашей ссылке прошли: 5 раз.
