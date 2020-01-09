@@ -3,7 +3,6 @@ import argparse
 import json
 import os
 from dotenv import load_dotenv, find_dotenv
-load_dotenv()
 
 URL = 'https://api-ssl.bitly.com/v4/user'
 API_URL = 'https://api-ssl.bitly.com/v4/bitlinks'
@@ -17,11 +16,11 @@ def create_argument():
 
 
 def shorten_link(user_link_input, api_token, headers):
-    headers = {'Authorization': api_token}
-    response_bitlinks = requests.post(API_URL,
-                                      json={'long_url': user_link_input},                                            headers=headers)
+     response_bitlinks = requests.post(API_URL,
+                                       json={'long_url': user_link_input},                                            
+                                       headers=headers)
     bitlink = response_bitlinks.json()['id']
-    return bitlink
+    return bitlink 
 
 
 def count_clicks(short_link, api_token, headers):
