@@ -40,16 +40,14 @@ if __name__ == "__main__":
     if user_link.startswith("bit.ly/"):
         short_link = user_link
         try:
-            print("По вашей ссылке прошли: ", count_clicks(short_link, api_token, headers), "раз")
+            print("По вашей ссылке прошли: ", count_clicks(short_link, headers), "раз")
         except requests.exceptions.HTTPError:
             print("Выход")
     elif user_link.startswith("http://") or ("https://"):
         long_url = user_link
         try:
-            print("Ваша короткая ссылка: ", shorten_link(user_link, api_token, headers))
+            print("Ваша короткая ссылка: ", shorten_link(user_link, headers))
         except requests.exceptions.HTTPError:
             print("Выход")
     else:
         print("Попробуйте еще раз, нерабочая ссылка")
-
-        
