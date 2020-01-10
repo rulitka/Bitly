@@ -15,7 +15,7 @@ def create_argument():
     return args.link
 
 
-def shorten_link(user_link, api_token, headers):
+def shorten_link(user_link, headers):
      response_bitlinks = requests.post(API_URL,
                                        json={'long_url': user_link},                                            
                                        headers=headers)
@@ -23,7 +23,7 @@ def shorten_link(user_link, api_token, headers):
     return bitlink 
 
 
-def count_clicks(short_link, api_token, headers):
+def count_clicks(short_link, headers):
     payload = {"units": -1,
                "unit": "day"
                }
